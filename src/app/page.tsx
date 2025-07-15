@@ -1,4 +1,4 @@
-import getAllCategories from '@/api/getAllCategories';
+import { getAllCategories } from '@/api/getAllCategories';
 import { CategoryCard } from '@/components/category/CategoryCard';
 
 export default async function Home() {

@@ -55,7 +55,11 @@ export function ProductCard({ product }: { product: Product }) {
 						</span>
 					)}
 				</div>
-				<Button className="w-full" onClick={() => addToCart(product)}>
+				<Button
+					data-testid="add-to-cart"
+					className="w-full"
+					onClick={() => addToCart(product)}
+				>
 					Add to Cart
 				</Button>
 			</CardFooter>

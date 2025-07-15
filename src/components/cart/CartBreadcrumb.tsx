@@ -8,7 +8,6 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from '@/components/ui/Breadcrumb';
-import { normalizeCategoryName } from '@/lib/utils';
 
 export function CartBreadcrumb() {
 	return (

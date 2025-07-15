@@ -1,5 +1,5 @@
 import { ProductList } from '@/components/product/ProductList';
-import getProductsByCategory from '@/api/getProductsByCategory';
+import { getProductsByCategory } from '@/api/getProductsByCategory';
 import { CategoryBreadcrumb } from '@/components/category/CategoryBreadcrumb';
 
 export default async function CategoryPage({

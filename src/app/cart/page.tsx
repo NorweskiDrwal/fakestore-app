@@ -1,15 +1,13 @@
 'use client';
 
-import { CartBreadcrumb } from '@/components/cart/CartBreadcrumb';
-import { useCart } from '@/components/cart/CartProvider';
-
-import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import Image from 'next/image';
 
-import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/Button';
+import { useCart } from '@/components/cart/CartProvider';
+import { CartBreadcrumb } from '@/components/cart/CartBreadcrumb';
 
 export default function CartPage() {
-	const router = useRouter();
 	const { cart, removeFromCart, updateQuantity, totalPrice, clearCart } = useCart();
 
 	if (cart.length === 0) {
@@ -19,7 +17,7 @@ export default function CartPage() {
 				<p className="text-gray-600 mb-6">
 					Looks like you haven't added any items to your cart yet.
 				</p>
-				<Button onClick={() => router.push('/')}>Continue Shopping</Button>
+				<Link href="/">Continue Shopping</Link>
 			</div>
 		);
 	}
@@ -82,7 +80,7 @@ export default function CartPage() {
 							<h3 className="text-xl font-bold">Total: ${totalPrice.toFixed(2)}</h3>
 						</div>
 						<div className="space-x-2">
-							<Button onClick={clearCart} variant="destructive">
+							<Button data-testid="clear-cart" onClick={clearCart} variant="destructive">
 								Clear Cart
 							</Button>
 							<Button>Checkout</Button>
